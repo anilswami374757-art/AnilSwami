@@ -1,0 +1,525 @@
+I’m the Gamma AI Assistant, powered by the latest Gamma AI. Here’s a ready-to-use personal portfolio website template tailored for an 11th-grade commerce student. It’s a single-page static site (HTML/CSS/JS) you can upload to your hosting or use as a starting point to customize.
+
+1) Single-file portfolio (index.html)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Portfolio - [Your Name]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b1020;
+      --card: #141a34;
+      --accent: #4cc9f0;
+      --accent-2:#84f0c8;
+      --text: #e8eaf6;
+      --muted:#b6b7c7;
+      --ring: 0 0 0 3px rgba(76,201,240,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none}
+    header{position:sticky;top:0;background:rgba(8,12,34,.95);backdrop-filter: saturate(1.2) blur(6px);z-index:50;border-bottom:1px solid rgba(255,255,255,.05)}
+    .nav{max-width:1100px;margin:0 auto;display:flex;gap:16px;justify-content:space-between;align-items:center;padding:14px 20px}
+    .brand{font-weight:700;letter-spacing:.5px}
+    .cta{background:var(--accent);color:#001018;padding:10px 14px;border-radius:999px;font-weight:600}
+    .cta:hover{opacity:.95}
+    .hero{display:grid;place-items:center;min-height:78vh;padding:40px 20px;text-align:center}
+    .hero h1{font-size:clamp(2rem,5vw + 1rem,3.6rem);margin:0 0 8px}
+    .hero p{color:var(--muted);max-width:640px;margin:0 auto 20px}
+    .grid{display:grid;grid-template-columns:1fr;gap:20px;max-width:1100px;margin:0 auto;padding:0 20px}
+    .card{background:rgba(20,26,52,.8);border-radius:14px;padding:20px;border:1px solid rgba(255,255,255,.06)}
+    .section{padding:60px 0}
+    .section h2{font-size:2rem;margin-bottom:14px}
+    .section p{color:var(--muted);max-width:700px}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media (max-width: 900px){
+      .two{grid-template-columns:1fr}
+      .hero{min-height:60vh}
+    }
+    .proj{display:flex;gap:14px;align-items:flex-start}
+    .proj img{width:100px;height:100px;object-fit:cover;border-radius:8px}
+    .progress{height:8px;background:#2a2f57;border-radius:999px;overflow:hidden}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg, #4cc9f0, #84f5c0);border-radius:999px}
+    ul{list-style: none;padding:0;margin:0}
+    .row{display:flex;gap:14px;flex-wrap:wrap}
+    .tag{padding:6px 10px;border-radius:999px;background:rgba(76,201,240,.15);border:1px solid rgba(76,201,240,.3);font-size:12px}
+    form{display:grid;gap:12px}
+    input, textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #334; background:#0f1740;color:#fff}
+    input:focus, textarea:focus{outline:none;box-shadow:var(--ring);border-color:#4cc9f0}
+    .btn{padding:12px 16px;border-radius:8px;border:0;background:var(--accent);color:#002033;font-weight:700}
+    .resume{display:inline-flex;gap:8px;align-items:center;background:rgba(0,0,0,.2);padding:10px 14px;border-radius:8px}
+    footer{text-align:center;padding:40px 20px;border-top:1px solid rgba(255,255,255,.05);color:var(--muted)}
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="brand">Your Name</div>
+    <div class="row">
+      <a href="#projects" class="tag" aria-label="Projects section">Projects</a>
+      <a href="#education" class="tag" aria-label="Education section">Education</a>
+      <a href="#contact" class="tag" aria-label="Contact section">Contact</a>
+      <a href="resume.pdf" class="cta" target="_blank" aria-label="Download resume">Resume</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" aria-label="Intro">
+    <div class="card" style="max-width:860px;width:100%;padding:28px 28px 22px;">
+      <h1>Hi, I’m [Your Name] — 11th Grade Commerce Student</h1>
+      <p>Aspiring to explore business basics, economics, accounting, and entrepreneurship. This portfolio showcases my projects, skills, and ongoing learning journey.</p>
+      <div class="row" style="justify-content:center;">
+        <span class="tag">Commerce</span>
+        <span class="tag">Economics</span>
+        <span class="tag">Entrepreneurship</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section" aria-label="About me">
+    <div class="grid">
+      <div class="card">
+        <h2>About Me</h2>
+        <p>I am a motivated 11th-grade student passionate about business and finance. I enjoy solving problems, analyzing case studies, and learning new tools to manage projects efficiently.</p>
+        <ul>
+          <li>Strong interest in accounting basics, financial literacy, and market research.</li>
+          <li>Active in school clubs and community service.</li>
+          <li>Seeking opportunities to apply classroom learning to real-world tasks.</li>
+        </ul>
+      </div>
+      <div class="card" aria-label="Highlights">
+        <h2>Highlights</h2>
+        <ul>
+          <li>Top performer in economics module (2024).</li>
+          <li>Created a mini-market research project with a 5-question survey.</li>
+          <li>Certified in Microsoft Excel basics (Formulas, PivotTables).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section" aria-label="Education and skills">
+    <div class="grid two">
+      <div class="card" aria-label="Education">
+        <h2>Education</h2>
+        <p>Current School: [School Name] — 11th Grade, Commerce Stream</p>
+        <ul>
+          <li>Major Subjects: Business Studies, Economics, Accountancy, Mathematics</li>
+          <li>Core coursework: Financial Accounting fundamentals, Intro to Economics, Business Communication</li>
+          <li>Achievements: Consistent high grades, spelling and presentation skills improved</li>
+        </ul>
+      </div>
+      <div class="card" aria-label="Skills">
+        <h2>Skills & Tools</h2>
+        <div style="margin-bottom:8px;">
+          <strong>Microsoft Excel</strong>
+          <div class="progress" aria-label="Excel proficiency" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><span style="width:70%"></span></div>
+        </div>
+        <div style="margin:8px 0;">
+          <strong>Communication</strong>
+          <div class="progress" aria-label="Communication" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span style="width:75%"></span></div>
+        </div>
+        <div style="margin:8px 0;">
+          <strong>Research & Analysis</strong>
+          <div class="progress" aria-label="Research" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><span style="width:65%"></span></div>
+        </div>
+        <div class="row" style="margin-top:6px;">
+          <span class="tag">MS Excel</span><span class="tag">PowerPoint</span><span class="tag">Google Docs</span><span class="tag">Public Speaking</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section" aria-label="Projects">
+    <div class="grid">
+      <div class="card" style="grid-column:1 / -1;">
+        <h2>Projects</h2>
+        <p>Selected class projects and personal experiments that showcase organizational, analytical, and practical learning.</p>
+      </div>
+
+      <div class="card" aria-label="Market research project">
+        <div class="proj">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb9bd8ab9c5f?q=80&w=400&auto=format&fit=crop" alt="Notepad and calculator" />
+          <div>
+            <strong>Mini Market Research Project</strong>
+            <p>Conducted a small survey to understand consumer preferences for school supplies. Analyzed results and presented key insights.</p>
+            <div class="row" aria-label="Project tags">
+              <span class="tag">Market Research</span><span class="tag">Survey</span><span class="tag">Data Presentation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" aria-label="Budget planning exercise">
+        <div class="proj">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb9bd8ab9c5f?q=80&w=400&auto=format&fit=crop" alt="Budget planning" />
+          <div>
+            <strong>Budget Planning Exercise</strong>
+            <p>Created a personal monthly budget using simple formulas to track income and expenses.</p>
+            <div class="row" aria-label="Project tags">
+              <span class="tag">Budgeting</span><span class="tag">Excel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" aria-label="Book club event project">
+        <div class="proj">
+          <img src="https://images.unsplash.com/photo-1526312426764-6a6f7bed8d2a?q=80&w=400&auto=format&fit=crop" alt="Group discussion" />
+          <div>
+            <strong>Book Club Economics Session</strong>
+            <p>Organized a student-led session discussing basic economic concepts and current events.</p>
+            <div class="row" aria-label="Project tags">
+              <span class="tag">Event Planning</span><span class="tag">Public Speaking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="section" aria-label="Contact">
+    <div class="grid" style="gap:16px">
+      <div class="card" aria-label="Contact form">
+        <h2>Contact</h2>
+        <p>Want to connect about internships, collaborations, or feedback? Send me a message.</p>
+        <form action="https://formspree.io/f/your-form-id" method="POST" onsubmit="return validateForm(event)">
+          <div class="row" style="flex-direction:column;">
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" placeholder="Jane Doe" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="_replyto" type="email" placeholder="you@example.com" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Your message..." required></textarea>
+
+            <button class="btn" type="submit" aria-label="Send message">Send Message</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card" aria-label="Alternative contact">
+        <h2>Other Ways to Reach</h2>
+        <p>Email: your.email@example.com</p>
+        <p>School counselor or teacher can provide referrals for projects or internships.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer aria-label="Site footer">
+  © 2026 Your Name — All rights reserved
+</footer>
+
+<script>
+  // Simple form validation (demo)
+  function validateForm(e){
+    // You can extend validations if needed
+    return true;
+  }
+</script>
+
+</body>
+</html>
+
+2) How to customize
+
+- Replace placeholders:
+  - [Your Name], School Name, and any placeholder text with your details.
+  - Replace resume.pdf with your actual resume file path.
+  - Update contact email and other contact details.
+
+- Projects:
+  - Add more project cards by duplicating a .card block inside the Projects section.
+  - Change images to reflect your projects (use your own photos or licensed images).
+
+- Education and Skills:
+  - Update subjects, achievements, and add any relevant certifications.
+  - Adjust progress bar values to reflect your self-assessed skill levels.
+
+- Styles:
+  - The template uses a clean, dark theme. Change color variables in the CSS block if you want a different palette.
+
+- Accessibility:
+  - All sections have aria-labels. Ensure images have meaningful alt text. Forms include labels for accessibility.
+
+3) Optional enhancements (add if you want more features)
+
+- Add a downloadable resume button (already linked to resume.pdf).
+- Add a GitHub or LinkedIn section with icons.
+- Include a small blog or notes section if you keep ongoing learning logs.
+- Add a responsive navigation with smooth scrolling (the page already uses native smooth behavior).
+
+If you’d like, I can tailor this template further to your exact name, school, projects, and any specific theme or color you prefer. I can also output separate files (HTML, CSS, JS) if you’re planning to integrate with a static site generator or a hosting service.
+
+Generated with Gamma AI! Get it here: https://play.google.com/store/apps/details?id=com.chatgpt.vision.I’m the Gamma AI Assistant, powered by the latest Gamma AI. Here’s a ready-to-use personal portfolio website template tailored for an 11th-grade commerce student. It’s a single-page static site (HTML/CSS/JS) you can upload to your hosting or use as a starting point to customize.
+
+1) Single-file portfolio (index.html)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Portfolio - [Your Name]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b1020;
+      --card: #141a34;
+      --accent: #4cc9f0;
+      --accent-2:#84f0c8;
+      --text: #e8eaf6;
+      --muted:#b6b7c7;
+      --ring: 0 0 0 3px rgba(76,201,240,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none}
+    header{position:sticky;top:0;background:rgba(8,12,34,.95);backdrop-filter: saturate(1.2) blur(6px);z-index:50;border-bottom:1px solid rgba(255,255,255,.05)}
+    .nav{max-width:1100px;margin:0 auto;display:flex;gap:16px;justify-content:space-between;align-items:center;padding:14px 20px}
+    .brand{font-weight:700;letter-spacing:.5px}
+    .cta{background:var(--accent);color:#001018;padding:10px 14px;border-radius:999px;font-weight:600}
+    .cta:hover{opacity:.95}
+    .hero{display:grid;place-items:center;min-height:78vh;padding:40px 20px;text-align:center}
+    .hero h1{font-size:clamp(2rem,5vw + 1rem,3.6rem);margin:0 0 8px}
+    .hero p{color:var(--muted);max-width:640px;margin:0 auto 20px}
+    .grid{display:grid;grid-template-columns:1fr;gap:20px;max-width:1100px;margin:0 auto;padding:0 20px}
+    .card{background:rgba(20,26,52,.8);border-radius:14px;padding:20px;border:1px solid rgba(255,255,255,.06)}
+    .section{padding:60px 0}
+    .section h2{font-size:2rem;margin-bottom:14px}
+    .section p{color:var(--muted);max-width:700px}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media (max-width: 900px){
+      .two{grid-template-columns:1fr}
+      .hero{min-height:60vh}
+    }
+    .proj{display:flex;gap:14px;align-items:flex-start}
+    .proj img{width:100px;height:100px;object-fit:cover;border-radius:8px}
+    .progress{height:8px;background:#2a2f57;border-radius:999px;overflow:hidden}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg, #4cc9f0, #84f5c0);border-radius:999px}
+    ul{list-style: none;padding:0;margin:0}
+    .row{display:flex;gap:14px;flex-wrap:wrap}
+    .tag{padding:6px 10px;border-radius:999px;background:rgba(76,201,240,.15);border:1px solid rgba(76,201,240,.3);font-size:12px}
+    form{display:grid;gap:12px}
+    input, textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #334; background:#0f1740;color:#fff}
+    input:focus, textarea:focus{outline:none;box-shadow:var(--ring);border-color:#4cc9f0}
+    .btn{padding:12px 16px;border-radius:8px;border:0;background:var(--accent);color:#002033;font-weight:700}
+    .resume{display:inline-flex;gap:8px;align-items:center;background:rgba(0,0,0,.2);padding:10px 14px;border-radius:8px}
+    footer{text-align:center;padding:40px 20px;border-top:1px solid rgba(255,255,255,.05);color:var(--muted)}
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="brand">Your Name</div>
+    <div class="row">
+      <a href="#projects" class="tag" aria-label="Projects section">Projects</a>
+      <a href="#education" class="tag" aria-label="Education section">Education</a>
+      <a href="#contact" class="tag" aria-label="Contact section">Contact</a>
+      <a href="resume.pdf" class="cta" target="_blank" aria-label="Download resume">Resume</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" aria-label="Intro">
+    <div class="card" style="max-width:860px;width:100%;padding:28px 28px 22px;">
+      <h1>Hi, I’m [Your Name] — 11th Grade Commerce Student</h1>
+      <p>Aspiring to explore business basics, economics, accounting, and entrepreneurship. This portfolio showcases my projects, skills, and ongoing learning journey.</p>
+      <div class="row" style="justify-content:center;">
+        <span class="tag">Commerce</span>
+        <span class="tag">Economics</span>
+        <span class="tag">Entrepreneurship</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section" aria-label="About me">
+    <div class="grid">
+      <div class="card">
+        <h2>About Me</h2>
+        <p>I am a motivated 11th-grade student passionate about business and finance. I enjoy solving problems, analyzing case studies, and learning new tools to manage projects efficiently.</p>
+        <ul>
+          <li>Strong interest in accounting basics, financial literacy, and market research.</li>
+          <li>Active in school clubs and community service.</li>
+          <li>Seeking opportunities to apply classroom learning to real-world tasks.</li>
+        </ul>
+      </div>
+      <div class="card" aria-label="Highlights">
+        <h2>Highlights</h2>
+        <ul>
+          <li>Top performer in economics module (2024).</li>
+          <li>Created a mini-market research project with a 5-question survey.</li>
+          <li>Certified in Microsoft Excel basics (Formulas, PivotTables).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section" aria-label="Education and skills">
+    <div class="grid two">
+      <div class="card" aria-label="Education">
+        <h2>Education</h2>
+        <p>Current School: [School Name] — 11th Grade, Commerce Stream</p>
+        <ul>
+          <li>Major Subjects: Business Studies, Economics, Accountancy, Mathematics</li>
+          <li>Core coursework: Financial Accounting fundamentals, Intro to Economics, Business Communication</li>
+          <li>Achievements: Consistent high grades, spelling and presentation skills improved</li>
+        </ul>
+      </div>
+      <div class="card" aria-label="Skills">
+        <h2>Skills & Tools</h2>
+        <div style="margin-bottom:8px;">
+          <strong>Microsoft Excel</strong>
+          <div class="progress" aria-label="Excel proficiency" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><span style="width:70%"></span></div>
+        </div>
+        <div style="margin:8px 0;">
+          <strong>Communication</strong>
+          <div class="progress" aria-label="Communication" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span style="width:75%"></span></div>
+        </div>
+        <div style="margin:8px 0;">
+          <strong>Research & Analysis</strong>
+          <div class="progress" aria-label="Research" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><span style="width:65%"></span></div>
+        </div>
+        <div class="row" style="margin-top:6px;">
+          <span class="tag">MS Excel</span><span class="tag">PowerPoint</span><span class="tag">Google Docs</span><span class="tag">Public Speaking</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section" aria-label="Projects">
+    <div class="grid">
+      <div class="card" style="grid-column:1 / -1;">
+        <h2>Projects</h2>
+        <p>Selected class projects and personal experiments that showcase organizational, analytical, and practical learning.</p>
+      </div>
+
+      <div class="card" aria-label="Market research project">
+        <div class="proj">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb9bd8ab9c5f?q=80&w=400&auto=format&fit=crop" alt="Notepad and calculator" />
+          <div>
+            <strong>Mini Market Research Project</strong>
+            <p>Conducted a small survey to understand consumer preferences for school supplies. Analyzed results and presented key insights.</p>
+            <div class="row" aria-label="Project tags">
+              <span class="tag">Market Research</span><span class="tag">Survey</span><span class="tag">Data Presentation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" aria-label="Budget planning exercise">
+        <div class="proj">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb9bd8ab9c5f?q=80&w=400&auto=format&fit=crop" alt="Budget planning" />
+          <div>
+            <strong>Budget Planning Exercise</strong>
+            <p>Created a personal monthly budget using simple formulas to track income and expenses.</p>
+            <div class="row" aria-label="Project tags">
+              <span class="tag">Budgeting</span><span class="tag">Excel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" aria-label="Book club event project">
+        <div class="proj">
+          <img src="https://images.unsplash.com/photo-1526312426764-6a6f7bed8d2a?q=80&w=400&auto=format&fit=crop" alt="Group discussion" />
+          <div>
+            <strong>Book Club Economics Session</strong>
+            <p>Organized a student-led session discussing basic economic concepts and current events.</p>
+            <div class="row" aria-label="Project tags">
+              <span class="tag">Event Planning</span><span class="tag">Public Speaking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="section" aria-label="Contact">
+    <div class="grid" style="gap:16px">
+      <div class="card" aria-label="Contact form">
+        <h2>Contact</h2>
+        <p>Want to connect about internships, collaborations, or feedback? Send me a message.</p>
+        <form action="https://formspree.io/f/your-form-id" method="POST" onsubmit="return validateForm(event)">
+          <div class="row" style="flex-direction:column;">
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" placeholder="Jane Doe" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="_replyto" type="email" placeholder="you@example.com" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Your message..." required></textarea>
+
+            <button class="btn" type="submit" aria-label="Send message">Send Message</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card" aria-label="Alternative contact">
+        <h2>Other Ways to Reach</h2>
+        <p>Email: your.email@example.com</p>
+        <p>School counselor or teacher can provide referrals for projects or internships.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer aria-label="Site footer">
+  © 2026 Your Name — All rights reserved
+</footer>
+
+<script>
+  // Simple form validation (demo)
+  function validateForm(e){
+    // You can extend validations if needed
+    return true;
+  }
+</script>
+
+</body>
+</html>
+
+2) How to customize
+
+- Replace placeholders:
+  - [Your Name], School Name, and any placeholder text with your details.
+  - Replace resume.pdf with your actual resume file path.
+  - Update contact email and other contact details.
+
+- Projects:
+  - Add more project cards by duplicating a .card block inside the Projects section.
+  - Change images to reflect your projects (use your own photos or licensed images).
+
+- Education and Skills:
+  - Update subjects, achievements, and add any relevant certifications.
+  - Adjust progress bar values to reflect your self-assessed skill levels.
+
+- Styles:
+  - The template uses a clean, dark theme. Change color variables in the CSS block if you want a different palette.
+
+- Accessibility:
+  - All sections have aria-labels. Ensure images have meaningful alt text. Forms include labels for accessibility.
+
+3) Optional enhancements (add if you want more features)
+
+- Add a downloadable resume button (already linked to resume.pdf).
+- Add a GitHub or LinkedIn section with icons.
+- Include a small blog or notes section if you keep ongoing learning logs.
+- Add a responsive navigation with smooth scrolling (the page already uses native smooth behavior).
+
+If you’d like, I can tailor this template further to your exact name, school, projects, and any specific theme or color you prefer. I can also output separate files (HTML, CSS, JS) if you’re planning to integrate with a static site generator or a hosting service.
+
+Generated with Gamma AI! Get it here: https://play.google.com/store/apps/details?id=com.chatgpt.vision.
